@@ -1,0 +1,59 @@
+﻿@model RentalSys.Models.HouseBookingModel
+
+@{
+    ViewData["Title"] = "Booking";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Book House</h4>
+                        <p class="card-description">
+                            Carefully enter all details...
+                            <h6 style="color:green">@ViewBag.m</h6>
+                        </p>
+                        <form class="forms-sample" asp-controller="HouseBooking" asp-action="Booking" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="bCusName" class="control-label"></label>
+                                <input asp-for="bCusName" class="form-control" placeholder="Name" />
+                                <span asp-validation-for="bCusName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="bCusAddress" class="control-label"></label>
+                                <input asp-for="bCusAddress" class="form-control" placeholder="Address" />
+                                <span asp-validation-for="bCusAddress" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="bCusEmail" class="control-label"></label>
+                                <input asp-for="bCusEmail" class="form-control" placeholder="Email" />
+                                <span asp-validation-for="bCusEmail" class="text-danger"></span>
+                            </div>
+                          
+                            <div class="form-group">
+                                <label asp-for="bCusPhoneNum" class="control-label"></label>
+                                <input asp-for="bCusPhoneNum" class="form-control" placeholder="Phone No" />
+                                <span asp-validation-for="bCusPhoneNum" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="bCusCnic" class="control-label"></label>
+                                <input asp-for="bCusCnic" class="form-control" placeholder="CNIC" />
+                                <span asp-validation-for="bCusCnic" class="text-danger"></span>
+                            </div>
+                          
+                            <div class="form-group">
+                                <input type="submit" value="Book" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
